@@ -76,8 +76,9 @@ class Link extends Field implements PreviewableFieldInterface
      * @return TypeInterface|null
      * @throws \yii\base\InvalidConfigException
      */
-    public function getType(string $identifier)
+    public function getType(string $identifier = null)
     {
+        if ($identifier === null) return null;
         // Is it already an object?
         if (!array_key_exists($identifier, $this->types)) {
             // Can we create it?
